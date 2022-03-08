@@ -35,6 +35,7 @@ def req(url,data='',method='get'):
     if method =='get':
         res = requests.get(url,data)
         if res.status_code == 200:
+            res.encoding = 'utf-8'
             res = res.text
         else:
             print('请求失败：'+str(res.status_code))
@@ -48,6 +49,6 @@ def req(url,data='',method='get'):
     return res
 
 
-res = req('https://www.galaxyautotech.com/ugc-admin/#/platform/scene-manage-ugc')
+res = req('https://www.baidu.com/')
 print(res)
 
